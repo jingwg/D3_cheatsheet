@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>D3 cheatsheet for EDAV</title>
+
+		<script src="https://d3js.org/d3.v4.min.js"></script>  <!-- link to D3 library -->
+		<link rel="stylesheet" href="d3_cheetsheet_style.css">
+
+    <!--internal style goes to the head of the html -->
+
+
+	</head>
+  <body>
+    <h1 align="center">D3 cheatsheet for Exploratory Data Analysis and Visualization </h1>
+    <p>D3 is a JavaScript based tool used for loading data into a web page and creating data visulization. In this cheetsheet I combined the D3 scripts we learned so far. I will keep updating this cheetsheet once we we learn more about D3 application</p>
+    <ul>
+        <li><a href="#selection"><b>Selection</b></a></li>
+        <li><a href="#attribute"><b>Attribute</b></a></li>
+        <li><a href="#style"><b>Style</b></a></li>
+        <li><a href="#transition"><b>Transition</b></a></li>
+        <li><a href="#interactive"><b>Interactive</b></a></li>
+    </ul>
+
+    <section id="selection"><h4 class= "subtitle">Selection</h4>
+      <table>
+        <tr>
+          <th class = "code">d3.select()</th>
+          <th class = "expla">Returns the <b>first<b> element match with the selection</th>
+          <th>d3.select("circle")</th>
+        </tr>
+        <tr>
+          <th class = "code">d3.selectAll()</th>
+          <th class = "expla">Returns all elements match with the selection</th>
+          <th>d3.selectAll("circle")</th>
+        </tr>
+        <tr>
+          <th class = "code"> <i>selection</i>.append()</th>
+          <th class = "expla">Creates a new element inside the selection</th>
+          <th>d3.select("svg").append("circle")</th>
+        </tr>
+        <tr>
+          <th class = "code"><i>selection</i>.remove()</th>
+          <th class = "expla">Removes selected elements.</th>
+          <th>d3.select("circle").remove()</th>
+        </tr>
+        <tr>
+          <th class = "code"><i>selection</i>.text()</th>
+          <th class = "expla">Add the text content of the selection</th>
+          <th>d3.select("svg").text()</th>
+        </tr>
+        <tr>
+          <th class = "code"><i>selection</i>.attr()</th>
+          <th class = "expla">Gives an HTML attribute value on the selection</th>
+          <th>d3.select("circle").attr("cx", "200")</th>
+        </tr>
+        <tr>
+          <th class = "code"><i>selection</i>.style()</th>
+          <th class = "expla">Gives CSS style on the selections</th>
+          <th>d3.select("circle").style("fill", "red")</th>
+        </tr>
+      </table>
+    </section>
+
+		<section id="attribute"><h4 class= "subtitle">Attribute</h4>
+			<table>
+				<tr>
+					<th class = "code"><i>selection</i>.attr(<q>cx/cy</q>, <q>number</q>)</th>
+					<th class = "expla">Locates the element</th>
+					<th>d3.select("circle").attr("cx", "200").attr("cy", "160")</th>
+				</tr>
+				<tr>
+					<th class = "code"><i>selection</i>.attr(<q>height/width</q>, <q>number</q>)</th>
+					<th class = "expla">Set the width or height of the selection</th>
+					<th>d3.select("svg").attr("width", "100").attr("height", "200")</th>
+				</tr>
+				<tr>
+					<th class = "code"><i>selection</i>.attr(<q>r</q>, <q>number</q>))</th>
+					<th class = "expla">Set the radius of the selection</th>
+					<th>d3.select("circle").attr("r", "20")</th>
+				</tr>
+				<tr>
+					<th class = "code"><i>selection</i>.attr(<q>style</q>, <q>CCS text</q>)</th>
+					<th class = "expla">Same usage as CSS style. Gives CSS style on the selections</th>
+					<th>d3.select("svg").attr("style", "color: red;")</th>
+				</tr>
+				<tr>
+					<th class = "code"><i>selection</i>.attr(<q>transform</q>, <q>translate (number, number)</q>)</th>
+					<th class = "expla">Transfers the selection to a new position</th>
+					<th>d3.select("circle").transition().duration(2000).attr("transform", "translate (500, 400)")</th>
+				</tr>
+				<tr>
+					<th class = "code"><i>selection</i>.attr(<q>transform</q>, <q>scale(number)</q>)</th>
+					<th class = "expla">Changes the size of selection</th>
+					<th>d3.select("circle").transition().duration(2000).attr("transform", "scale (2.0)")</th>
+				</tr>
+				<tr>
+					<th class = "code"><i>selection</i>.attr(<q>transform</q>, <q>rotate(number)</q>)</th>
+					<th class = "expla">Rotates the selection to a sepecific degree</th>
+					<th>d3.select("svg").transition().duration(2000).attr("transform", "rotate(45.0)")</th>
+				</tr>
+			</table>
+		</section>
+
+
+		<section id="style"><h4 class= "subtitle">Style</h4>
+			<table>
+				<tr>
+					<th class = "code"><i>selection</i>.style(<q>fill</q>, <q>Hex color code/RGB color code</q>)</th>
+					<th class = "expla">Fills the seleciton with color. For text, fill refers to the color of the letters.</th>
+					<th>d3.select("circle").style("fill", "red")</th>
+				</tr>
+				<tr>
+					<th class = "code"><i>selection</i>.style(<q>stroke</q>, <q>Hex color code/RGB color code</q>)</th>
+					<th class = "expla">Fills stroke of the seleciton with color. For text, fill the outline of the letters</th>
+					<th>d3.select("circle").style("stoke", "blue")</th>
+				</tr>
+				<tr>
+					<th class = "code"><i>selection</i>.style(<q>stroke-width</q>, <q>number</q>)</th>
+					<th class = "expla">Sets the weight of stroke of the seleciton with color. </th>
+					<th>d3.select("circle").style("stroke-width", "2")</th>
+				</tr>
+				<tr>
+					<th class = "code"><i>selection</i>.style(<q>opacity</q>, <q>number 0-1 </q>)</th>
+					<th class = "expla">Sets the opacity the seleciton with color. </th>
+					<th>d3.select("circle").style("opacity", "0.5")</th>
+				</tr>
+			</table>
+		</section>
+
+		<section id="transition"><h4 class= "subtitle">Transition</h4>
+			<table>
+				<tr>
+					<th class = "code"><i>selection</i>.transition().duration(<q>number</q>)</th>
+					<th class = "expla">Set the duration of the transition</th>
+					<th>d3.select("circle").transition().duration(2000).attr("cx", "400");</th>
+				</tr>
+				<tr>
+					<th class = "code"><i>selection</i>.transition().delay(<q>number</q>)</th>
+					<th class = "expla">Set the delay of the transition</th>
+					<th>d3.select("ellipse").transition().delay(2000).duration(2000).attr("cy","100");</th>
+				</tr>
+			</table>
+		</section>
+
+		<section id="interactive"><h4 class= "subtitle">Interactive</h4>
+			<table>
+				<tr>
+					<th class = "code"><i>selection</i>.on(<q>click/mouseover/mouseout</q>, <q>function</q>)</th>
+					<th class = "expla">Set an event listener to the selection</th>
+					<th>d3.select("#button").on("click",	function() {	d3.selectAll("circle").remove()} ) </th>
+				</tr>
+			</table>
+		</section>
+
+		<section class = "footer"> <h3>Reference<h3>
+			<br>Joyce Robbins. (2018, November 01). D3. Retrieved from <a href="https://github.com/jtr13/D3">https://github.com/jtr13/D3</a> </br>
+		</section>
+  </body>
+
+  </html>
