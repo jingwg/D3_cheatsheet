@@ -13,7 +13,7 @@
 	</head>
   <body>
     <h1 align="center">D3 cheatsheet for Exploratory Data Analysis and Visualization </h1>
-    <p>D3 is a JavaScript based tool used for loading data into a web page and creating data visulization. In this cheetsheet I combined the D3 scripts we learned so far. I will keep updating this cheetsheet once we we learn more about D3 application</p>
+    <p>D3 is a JavaScript based tool used for loading data into a web page and creating data visulization. In this cheatsheet I combined the D3 scripts we learned so far. I will keep updating this cheatsheet once we we learn more about D3 applications.</p>
     <ul>
         <li><a href="#selection"><b>Selection</b></a></li>
         <li><a href="#attribute"><b>Attribute</b></a></li>
@@ -46,7 +46,7 @@
         </tr>
         <tr>
           <th class = "code"><i>selection</i>.text()</th>
-          <th class = "expla">Add the text content of the selection</th>
+          <th class = "expla">Adds the text content of the selection</th>
           <th>d3.select("svg").text()</th>
         </tr>
         <tr>
@@ -71,17 +71,17 @@
 				</tr>
 				<tr>
 					<th class = "code"><i>selection</i>.attr(<q>height/width</q>, <q>number</q>)</th>
-					<th class = "expla">Set the width or height of the selection</th>
+					<th class = "expla">Sets the width or height of the selection</th>
 					<th>d3.select("svg").attr("width", "100").attr("height", "200")</th>
 				</tr>
 				<tr>
-					<th class = "code"><i>selection</i>.attr(<q>r</q>, <q>number</q>))</th>
-					<th class = "expla">Set the radius of the selection</th>
+					<th class = "code"><i>selection</i>.attr(<q>r</q>, <q>number</q>)</th>
+					<th class = "expla">Sets the radius of the selection</th>
 					<th>d3.select("circle").attr("r", "20")</th>
 				</tr>
 				<tr>
 					<th class = "code"><i>selection</i>.attr(<q>style</q>, <q>CCS text</q>)</th>
-					<th class = "expla">Same usage as CSS style. Gives CSS style on the selections</th>
+					<th class = "expla">Similar usage as CSS style. Gives CSS style on the selections</th>
 					<th>d3.select("svg").attr("style", "color: red;")</th>
 				</tr>
 				<tr>
@@ -132,12 +132,12 @@
 			<table>
 				<tr>
 					<th class = "code"><i>selection</i>.transition().duration(<q>number</q>)</th>
-					<th class = "expla">Set the duration of the transition</th>
+					<th class = "expla">Sets the duration of the transition</th>
 					<th>d3.select("circle").transition().duration(2000).attr("cx", "400");</th>
 				</tr>
 				<tr>
 					<th class = "code"><i>selection</i>.transition().delay(<q>number</q>)</th>
-					<th class = "expla">Set the delay of the transition</th>
+					<th class = "expla">Sets the delay of the transition</th>
 					<th>d3.select("ellipse").transition().delay(2000).duration(2000).attr("cy","100");</th>
 				</tr>
 			</table>
